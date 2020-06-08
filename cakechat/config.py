@@ -69,7 +69,7 @@ BATCH_SIZE = 196  # Number of samples to be used for gradient estimation on each
 SHUFFLE_TRAINING_BATCHES = True  # Shuffle training batches in the dataset each epoch
 
 INPUT_SEQUENCE_LENGTH = 30  # Input sequence length for the model during the training;
-INPUT_CONTEXT_SIZE = 2  # Maximum depth of the conversational history to be used in encoder (at least 1)
+INPUT_CONTEXT_SIZE = 3  # Maximum depth of the conversational history to be used in encoder (at least 1)
 OUTPUT_SEQUENCE_LENGTH = 32  # Output sequence length. Better to keep as INPUT_SEQUENCE_LENGTH+2 for start/end tokens
 
 GRAD_CLIP = 5.0  # Gradient clipping param passed to optimizer
