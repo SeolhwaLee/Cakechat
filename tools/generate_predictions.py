@@ -21,9 +21,12 @@ from cakechat.utils.text_processing import get_index_to_token_path, load_index_t
 from cakechat.utils.w2v.model import get_w2v_model_id
 from cakechat.config import BASE_CORPUS_NAME, QUESTIONS_CORPUS_NAME, INPUT_SEQUENCE_LENGTH, INPUT_CONTEXT_SIZE, \
     PREDICTION_MODES, PREDICTION_MODE_FOR_TESTS, RESULTS_PATH, DEFAULT_TEMPERATURE, TRAIN_CORPUS_NAME, \
-    USE_PRETRAINED_W2V_EMBEDDINGS_LAYER
+    USE_PRETRAINED_W2V_EMBEDDINGS_LAYER, RANDOM_SEED
+import numpy as np
 
+np.random.seed(seed=RANDOM_SEED)
 _logger = get_tools_logger(__file__)
+
 
 
 def _save_test_results(test_dataset, predictions_filename, nn_model, prediction_mode, **kwargs):
@@ -171,4 +174,5 @@ def parse_args():
 
 if __name__ == '__main__':
     args = vars(parse_args())
+
     predict(args.pop('model'), args.pop('tokens_index'), args.pop('conditions_index'), args.pop('output'), **args)

@@ -6,7 +6,7 @@ from cakechat.utils.env import is_dev_env
 MODEL_NAME = 'cakechat_v2.0_keras_tf'
 
 INTX = 'uint16'  # use unsigined 16-bits int representation for memory efficiency
-RANDOM_SEED = 42  # Fix the random seed to a certain value to make everything reproducible
+RANDOM_SEED = 21  # Fix the random seed to a certain value to make everything reproducible
 
 # AWS S3 params
 S3_MODELS_BUCKET_NAME = 'cake-chat-data-v2'  # S3 bucket with all the data
